@@ -39,7 +39,7 @@ const Navbar = (props: Props) => {
           </div>
         </button>
       </div>
-      <div className="bg-accentgray w-screen font-light flex flex-row justify-start px-5 py-1 text-xs md:pl-10">
+      <div className="bg-accentgray w-screen font-light flex flex-row justify-start px-5 py-1 text-sm md:pl-10">
         <h3>Doctor & Patient Portal</h3>
       </div>
     </header>
