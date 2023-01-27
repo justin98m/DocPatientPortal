@@ -30,11 +30,15 @@ const Navbar = (props: Props) => {
           <div className="w-9 h-1 bg-boablue mb-1"></div>
           <div className="w-9 h-1 bg-boablue mb-1"></div>
           <div className="w-9 h-1 bg-boablue "></div>
-          <div className="absolute top-0 h-screen w-4/12 bg-accentgray opacity-0 group-focus: right-0 group-focus:opacity-100 transition-all duration-300">
+          <div className="absolute top-0 md:top-9 h-screen w-4/12 bg-white opacity-0 group-focus: right-0 group-focus:opacity-100 transition-all duration-300">
+            <h1 className="font-bold text-xl pt-10">Menu</h1>
+            <span className="block text-center h-1 bg-boablue my-2 mx-10"></span>
             <ul className="flex flex-col items-center w-full text-base cursor-pointer pt-10">
-              <li className="py-4 px-6 w-full">Home</li>
-              <li className="py-4 px-6 w-full">Patient Login</li>
-              <li className="py-4 px-6 w-full">Doctor Login</li>
+              <li className="py-4 px-6 w-full hover:underline">Home</li>
+              <li className="py-4 px-6 w-full hover:underline">
+                Patient Login
+              </li>
+              <li className="py-4 px-6 w-full hover:underline">Doctor Login</li>
             </ul>
           </div>
         </button>

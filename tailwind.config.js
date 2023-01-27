@@ -12,7 +12,7 @@ module.exports = {
       sans: ["mukta", "san-serif"],
     },
     screens: {
-      sm: { min: "320px", max: "425px" },
+      sm: { max: "425px" },
 
       md: { min: "768px" },
 
