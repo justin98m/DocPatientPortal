@@ -21,7 +21,7 @@ const Header = (props: Props) => {
             </p>
             <div className="mt-8 flex flex-wrap gap-4 text-center justify-center">
               <a
-                href="#"
+                href="/api/auth/login"
                 className="block w-64 rounded bg-boared px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
               >
                 Login
