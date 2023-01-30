@@ -1,6 +1,6 @@
-import React from "react";
-import { SocialIcon } from "react-social-icons";
-import Image from "next/image";
+import React from 'react';
+import { SocialIcon } from 'react-social-icons';
+import Image from 'next/image';
 
 type Props = {};
 
@@ -47,7 +47,7 @@ const Footer = (props: Props) => {
       <div className="px-5 py-4 flex flex-col justify-between items-center md:flex-row md:mx-10 ">
         <div>
           <p className="text-gray-100">
-            © 2023{" "}
+            © 2023{' '}
             <span className="font-bold"> Bank of America Corporation.</span> All
             rights reserved.
           </p>
