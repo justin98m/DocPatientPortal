@@ -6,11 +6,23 @@ type Props = {};
 
 const Navbar = (props: Props) => {
   return (
-    <header className="sticky top-0 ">
+    <header className="top-0 ">
       <div className="hidden text-sm w-screen bg-accentgray font-light md:flex flex-row justify-end px-5 py-2 top-0 md:mr-10">
-        <a href="#">BankofAmerica.com</a>
+        <a
+          href="https://business.bofa.com/en-us/content/healthcare-financial-management.html"
+          target="_blank"
+          className="hover:underline text-boablue"
+        >
+          BankofAmerica.com
+        </a>
         <span className="px-5">|</span>
-        <a href="#">About Bank of America</a>
+        <a
+          href="https://about.bankofamerica.com/en"
+          target="_blank"
+          className="hover:underline text-boablue"
+        >
+          About Bank of America
+        </a>
       </div>
       <div className="w-screen flex flex-row items-center justify-between">
         <a href="/">
