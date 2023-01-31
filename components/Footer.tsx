@@ -1,6 +1,6 @@
-import React from 'react';
-import { SocialIcon } from 'react-social-icons';
-import Image from 'next/image';
+import React from "react";
+import { SocialIcon } from "react-social-icons";
+import Image from "next/image";
 
 type Props = {};
 
@@ -11,10 +11,10 @@ const Footer = (props: Props) => {
         <a href="/">
           <Image
             src="/boa_logo-white.png"
-            width={300}
-            height={300}
+            width={350}
+            height={350}
             alt="logo"
-            className="px-5 pb-5 pt-10 flex flex-row justify-center items-center"
+            className="mb-10 pt-10 flex flex-row justify-center items-center"
           />
         </a>
       </div>
@@ -47,7 +47,7 @@ const Footer = (props: Props) => {
       <div className="px-5 py-4 flex flex-col justify-between items-center md:flex-row md:mx-10 ">
         <div>
           <p className="text-gray-100">
-            © 2023{' '}
+            © 2023{" "}
             <span className="font-bold"> Bank of America Corporation.</span> All
             rights reserved.
           </p>
