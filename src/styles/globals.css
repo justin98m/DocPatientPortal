@@ -1,8 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url("/public/font/Mukta-Regular.ttf");
+@import url('https://fonts.googleapis.com/css2?family=Mukta&display=swap');
 
 @font-face {
   font-family: "arapey";
