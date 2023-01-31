@@ -1,5 +1,5 @@
-import React from "react";
-import { useUser } from "@auth0/nextjs-auth0/client";
+import React from 'react';
+import { useUser } from '@auth0/nextjs-auth0/client';
 
 function Login() {
   const { user, error, isLoading } = useUser();
@@ -10,8 +10,15 @@ function Login() {
   if (user) {
     return (
       <div className="text-sm bg-white flex flex-col items-end font-light px-5">
-        <div className="hidden md:flex">Welcome, {user.name}</div>
-        <a href="/api/auth/logout"> Logout</a>
+        <div className="hidden md:flex">
+          Welcome, <span className="ml-1">{user.name}</span>
+        </div>
+        <a href="/api/auth/logout">
+          <span className="text-boablue font-bold hover:underline">
+            {' '}
+            Logout
+          </span>
+        </a>
       </div>
     );
   } else {
