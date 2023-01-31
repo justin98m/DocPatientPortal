@@ -9,8 +9,9 @@ function Login() {
 
   if (user) {
     return (
-      <div className="hidden text-sm w-screen bg-accentgray font-light md:flex flex-row justify-end px-5 py-2 top-0 md:mr-10">
-        Welcome, {user.name} <a href="/api/auth/logout"> Logout</a>
+      <div className="text-sm bg-white flex flex-col items-end font-light px-5">
+        <div className="hidden md:flex">Welcome, {user.name}</div>
+        <a href="/api/auth/logout"> Logout</a>
       </div>
     );
   } else {
