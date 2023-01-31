@@ -1,7 +1,7 @@
 //next created types for req,res objects
 import type { NextApiRequest, NextApiResponse } from 'next'
 function parseDrugData(data: any){
-    //data = JSON.parse(data);
+    //Data is returned as not found if the fda api cannot find the drug
     let parsedData = {
         warnings: 'Drug Data not found',
         use : 'Drug Data not found'
@@ -9,7 +9,7 @@ function parseDrugData(data: any){
     if (data.error){
         return parsedData;
     }
-    parsedData.warnings = data.results[0].warnings_and_cautions[0];
+    parsedData.warnings = data.results[0].warnings[0];
     parsedData.use = data.results[0].indications_and_usage[0];
     return parsedData;
 
