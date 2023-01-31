@@ -1,6 +1,6 @@
-import React from "react";
-import { SocialIcon } from "react-social-icons";
-import Image from "next/image";
+import React from 'react';
+import { SocialIcon } from 'react-social-icons';
+import Image from 'next/image';
 
 type Props = {};
 
@@ -36,18 +36,18 @@ const Footer = (props: Props) => {
         </a>
 
         <a
-          href="#"
+          href="https://business.bofa.com/content/boaml/en_us/contactus.html"
           className="mx-4 text-gray-100 transition-colors duration-300 hover:underline"
           aria-label="about"
         >
-          About
+          Contact Us
         </a>
       </div>
       <span className="block text-center h-1 bg-gray-100 my-2 mx-10"></span>
       <div className="px-5 py-4 flex flex-col justify-between items-center md:flex-row md:mx-10 ">
         <div>
           <p className="text-gray-100">
-            © 2023{" "}
+            © 2023{' '}
             <span className="font-bold"> Bank of America Corporation.</span> All
             rights reserved.
           </p>
