@@ -6,7 +6,7 @@ const Add = (props: Props) => {
   const [showModal, setShowModal] = useState(false);
   return (
     <div className="flex flex-col justify-evenly items-center md:flex-row py-5">
-      <div className="flex pb-5 text-md justify-center items-center md:pb-0">
+      <div className="invisible flex text-md justify-center items-center md:visible md:pb-0">
         <label>My doctor:</label>
         <select className="text-md px-1">
           <option selected>Choose a doctor</option>
@@ -17,8 +17,11 @@ const Add = (props: Props) => {
           <option>Dr. Camargo</option>
         </select>
       </div>
+      <h1 className="font-extrabold text-5xl pb-5 text-center text-boared md:py-3 mb-1">
+        Medication Log
+      </h1>
       <button
-        className="bg-boablue hover:bg-blue-800 text-white px-5 py-3 font-bold uppercase text-sm rounded-md ease-linear transition-all duration-150"
+        className="mb-1 bg-boablue hover:bg-blue-800 text-white px-5 py-3 font-bold uppercase text-sm rounded-md ease-linear transition-all duration-150 "
         type="button"
         onClick={() => setShowModal(true)}
       >
