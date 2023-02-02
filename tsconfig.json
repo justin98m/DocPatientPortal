@@ -19,6 +19,6 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/Search.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/Grid.jsx"],
   "exclude": ["node_modules"]
 }
