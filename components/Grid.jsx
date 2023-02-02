@@ -7,21 +7,19 @@ const ReadMore = ({ children }) => {
     setIsReadMore(!isReadMore);
   };
   return (
-    <p className="text">
+    <div className="text">
       {isReadMore ? text.toString().slice(0, 15) : text}
       <span onClick={toggleReadMore} className="font-extrabold text-boared">
         {isReadMore ? '...read more' : ' show less'}
       </span>
-    </p>
+    </div>
   );
 };
 
 function Grid() {
   return (
     <div className="sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-5 lg:px-5 lg:py-5">
-      <h1 className="font-extrabold text-2xl text-center text-boared mb-2">
-        Medication Log
-      </h1>
+      
       <div className="grid grid-cols-2 gap-2 mb-5 p-2 border border-solid border-boablue col-auto sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-8">
         <div className="col-span-1 flex flex-row md:flex-col lg:flex-col">
           <h3 className="font-sans font-bold text-boablue mr-2">
