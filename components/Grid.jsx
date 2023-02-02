@@ -19,14 +19,13 @@ const ReadMore = ({ children }) => {
 function Grid() {
   return (
     <div className="sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-5 lg:px-5 lg:py-5">
-      
-      <div className="grid grid-cols-2 gap-2 mb-5 p-2 border border-solid border-boablue col-auto sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-8">
-        <div className="col-span-1 flex flex-row md:flex-col lg:flex-col">
+      <div className="grid grid-cols-2 gap-2 mb-5 p-2 border-b border-solid border-boablue col-auto sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-8">
+        {/* <div className="col-span-1 flex flex-row md:flex-col lg:flex-col">
           <h3 className="font-sans font-bold text-boablue mr-2">
             Time of Day:
           </h3>
           <p className="text-black">Evening</p>
-        </div>
+        </div> */}
         <div className="flex flex-row md:flex-col lg:flex-col">
           <h3 className="font-sans font-bold text-boablue mr-2">Start Date:</h3>
           <p className="text-black">11-15-2021</p>
@@ -57,7 +56,7 @@ function Grid() {
           </h3>
           <p className="text-black">Diabetes</p>
         </div>
-        <div className="flex flex-row md:flex-col lg:flex-col">
+        <div className="flex flex-row md:flex-col lg:flex-col col-span-2">
           <h3 className="font-sans font-bold text-boablue mr-2">Warnings:</h3>
 
           <p className="text-black">
@@ -78,13 +77,13 @@ function Grid() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-2 mb-5 p-2 border border-solid border-boablue col-auto sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-8">
-        <div className="col-span-1 flex flex-row md:flex-col lg:flex-col">
+      <div className="grid grid-cols-2 gap-2 mb-5 p-2 border-b border-solid border-boablue col-auto sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-8">
+        {/* <div className="col-span-1 flex flex-row md:flex-col lg:flex-col">
           <h3 className="font-sans font-bold text-boablue mr-2">
             Time of Day:
           </h3>
           <p className="text-black">Morning</p>
-        </div>
+        </div> */}
         <div className="flex flex-row md:flex-col lg:flex-col">
           <h3 className="font-sans font-bold text-boablue mr-2">Start Date:</h3>
           <p className="text-black">05-10-2022</p>
@@ -115,7 +114,7 @@ function Grid() {
           </h3>
           <p className="text-black">Allergies</p>
         </div>
-        <div className="flex flex-row md:flex-col lg:flex-col">
+        <div className="flex flex-row md:flex-col lg:flex-col col-span-2">
           <h3 className="font-sans font-bold text-boablue mr-2">Warnings:</h3>
           <p className="text-black">
             <ReadMore>
@@ -135,13 +134,13 @@ function Grid() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-2 col-auto p-2 border border-solid border-boablue mb-5 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-8">
-        <div className="col-span-1 flex flex-row md:flex-col lg:flex-col">
+      <div className="grid grid-cols-2 gap-2 col-auto p-2 border-b border-solid border-boablue mb-5 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-8">
+        {/* <div className="col-span-1 flex flex-row md:flex-col lg:flex-col">
           <h3 className="font-sans font-bold text-boablue mr-2">
             Time of Day:
           </h3>
-          <p className="text-black">Morning, Afternoon, Evening, Night</p>
-        </div>
+          <p className="text-black">Afternoon</p>
+        </div> */}
         <div className="flex flex-row md:flex-col lg:flex-col">
           <h3 className="font-sans font-bold text-boablue mr-2">Start Date:</h3>
           <p className="text-black">01-20-2023</p>
@@ -172,7 +171,7 @@ function Grid() {
           </h3>
           <p className="text-black">Cough</p>
         </div>
-        <div className="flex flex-row md:flex-col lg:flex-col">
+        <div className="flex flex-row md:flex-col lg:flex-col col-span-2">
           <h3 className="font-sans font-bold text-boablue mr-2">Warnings:</h3>
           <p className="text-black">
             <ReadMore>
@@ -188,13 +187,13 @@ function Grid() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-2 col-auto p-2 border border-solid border-boablue mb-5 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-8">
-        <div className="col-span-1 flex flex-row md:flex-col lg:flex-col">
+      <div className="grid grid-cols-2 gap-2 col-auto p-2 border-b border-solid border-boablue mb-5 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-8">
+        {/* <div className="col-span-1 flex flex-row md:flex-col lg:flex-col">
           <h3 className="font-sans font-bold text-boablue mr-2">
             Time of Day:
           </h3>
-          <p className="text-black">Morning, Night</p>
-        </div>
+          <p className="text-black">Night</p>
+        </div> */}
         <div className="flex flex-row md:flex-col lg:flex-col">
           <h3 className="font-sans font-bold text-boablue mr-2">Start Date:</h3>
           <p className="text-black">01-20-2023</p>
@@ -225,7 +224,7 @@ function Grid() {
           </h3>
           <p className="text-black">Congestion</p>
         </div>
-        <div className="flex flex-row md:flex-col lg:flex-col">
+        <div className="flex flex-row md:flex-col lg:flex-col col-span-2">
           <h3 className="font-sans font-bold text-boablue mr-2">Warnings:</h3>
           <p className="text-black">
             <ReadMore>
@@ -240,13 +239,13 @@ function Grid() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-2 col-auto p-2 border border-solid border-boablue mb-5 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-8">
-        <div className="col-span-1 flex flex-row md:flex-col lg:flex-col">
+      <div className="grid grid-cols-2 gap-2 col-auto p-2 border-b border-solid border-boablue mb-5 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-8">
+        {/* <div className="col-span-1 flex flex-row md:flex-col lg:flex-col">
           <h3 className="font-sans font-bold text-boablue mr-2">
             Time of Day:
           </h3>
           <p className="text-black">When Needed</p>
-        </div>
+        </div> */}
         <div className="flex flex-row md:flex-col lg:flex-col">
           <h3 className="font-sans font-bold text-boablue mr-2">Start Date:</h3>
           <p className="text-black">02-01-2023</p>
@@ -277,7 +276,7 @@ function Grid() {
           </h3>
           <p className="text-black">Pain relief</p>
         </div>
-        <div className="flex flex-row md:flex-col lg:flex-col">
+        <div className="flex flex-row md:flex-col lg:flex-col col-span-2">
           <h3 className="font-sans font-bold text-boablue mr-2">Warnings</h3>
           <p className="text-black">
             <ReadMore>
