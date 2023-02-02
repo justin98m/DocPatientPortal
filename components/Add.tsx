@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 type Props = {};
 
@@ -69,7 +69,7 @@ const Add = (props: Props) => {
                           <option value="milligram">Milligram</option>
                           <option value="gram">Gram</option>
                           <option value="kilogram">Kilogram</option>
-                          <option value="c3">Cubic centimeter/Shampoo</option>
+                          <option value="c3">Cubic centimeter</option>
                           <option value="millitre">Millitre</option>
                           <option value="litre">Litre</option>
                         </select>
