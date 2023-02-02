@@ -7,9 +7,7 @@ export default async function handler(req:NextApiRequest, res:NextApiResponse) {
     console.log(req.body);
     
     let result = await dbQuery(req.body.query, await connection());
-    if (result.err){
-        res.status(404).send(result.err);
-    }
+  
     res.status(200).send(result);
 }
 
