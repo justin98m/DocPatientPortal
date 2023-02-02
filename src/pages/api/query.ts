@@ -11,7 +11,7 @@ export default async function handler(req:NextApiRequest, res:NextApiResponse) {
     res.status(200).send(result);
 }
 
-export async function dbQuery(sql:string,con):object{
+export async function dbQuery(sql:string,con:any){
     const [rows] = await con.execute(sql)
     return rows;
 }
