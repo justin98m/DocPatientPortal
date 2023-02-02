@@ -78,6 +78,21 @@ const Add = (props: Props) => {
                   </div>
                   <div className="flex pb-5 flex-col">
                     <label className="font-sans font-bold text-boablue mr-2">
+                      Frequency
+                    </label>
+                    <select>
+                      <option value="daily">Daily</option>
+                      <option value="1x">1x a week</option>
+                      <option value="2x">2x a week</option>
+                      <option value="3x">3x a week</option>
+                      <option value="4x">4x a week</option>
+                      <option value="5x">5x a week</option>
+                      <option value="6x">6x a week</option>
+                      <option value="needed">When needed</option>
+                    </select>
+                  </div>
+                  <div className="flex pb-5 flex-col">
+                    <label className="font-sans font-bold text-boablue mr-2">
                       Intake Type
                     </label>
                     <select>
@@ -93,18 +108,6 @@ const Add = (props: Props) => {
                       <option value="injection">Injection</option>
                       <option value="liquid">Liquid</option>
                       <option value="lotion">Lotion</option>
-                    </select>
-                  </div>
-                  <div className="flex pb-5 flex-col">
-                    <label className="font-sans font-bold text-boablue mr-2">
-                      Time of Day
-                    </label>
-                    <select>
-                      <option value="morning">Morning</option>
-                      <option value="afternoon">Afternoon</option>
-                      <option value="evening">Evening</option>
-                      <option value="night">Night</option>
-                      <option value="needed">As Needed</option>
                     </select>
                   </div>
                   <div className="flex pb-5 flex-col">
