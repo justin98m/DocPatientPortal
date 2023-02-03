@@ -34,7 +34,6 @@ const Footer = (props: Props) => {
         >
           Medication Log
         </a>
-
         <a
           href="https://business.bofa.com/content/boaml/en_us/contactus.html"
           className="mx-4 text-gray-100 transition-colors duration-300 hover:underline"
