@@ -1,5 +1,6 @@
 import React from "react";
-
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 const CommonUI = (props: {
   children:
     | string
@@ -13,9 +14,9 @@ const CommonUI = (props: {
 }    ) => {
   return (
     <div>
-      <header>Header</header>
-      <main>{props.children}</main>
-      <footer>Footer</footer>
+      <Navbar />
+        {props.children}
+      <Footer />
     </div>
   );
 };
