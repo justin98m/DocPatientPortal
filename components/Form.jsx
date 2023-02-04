@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import { dateConversion } from "../src/lib/dateConversion";
 class Form extends Component {
   constructor(props) {
     super(props);
@@ -12,6 +12,18 @@ class Form extends Component {
       intake: "",
       time: "",
       date: "",
+    };
+  }
+
+  getFormData() {
+    return {
+      medname: this.state.medname,
+      dosage: this.state.dosage,
+      measurement: this.state.measurement,
+      frequency: this.state.frequency,
+      intake: this.state.intake,
+      time: this.state.time,
+      date: this.state.date,
     };
   }
 
@@ -36,12 +48,13 @@ class Form extends Component {
   handleDateChange = (event) => {
     this.setState({ date: event.target.value });
   };
+
   handleSubmit = (event) => {
-    alert(`${this.state.medname} has been added`);
-    console.log(
-      `${this.state.medname} ${this.state.dosage} ${this.state.measurement} ${this.state.frequency} ${this.state.intake} ${this.state.time} ${this.state.date}`
-    );
+    event.preventDefault();
+
+    dateConversion(this.state.date, this.state.time);
   };
+
   render() {
     return (
       <form onSubmit={this.handleSubmit} className="flex flex-col p-5">
@@ -76,20 +89,15 @@ class Form extends Component {
           </select>
         </div>
         <div className="pb-6 flex flex-col">
-          <label>Frequency</label>
-          <select
+          <label>Frequency (every x days)</label>
+
+          <input
+            type="number"
             value={this.state.frequency}
+            min="1"
+            max="31"
             onChange={this.handleFrequencyChange}
-          >
-            <option value="daily">Daily</option>
-            <option value="1x">1x a week</option>
-            <option value="2x">2x a week</option>
-            <option value="3x">3x a week</option>
-            <option value="4x">4x a week</option>
-            <option value="5x">5x a week</option>
-            <option value="6x">6x a week</option>
-            <option value="needed">When needed</option>
-          </select>
+          />
         </div>
         <div className="pb-6 flex flex-col">
           <label>Intake Type</label>
