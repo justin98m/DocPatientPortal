@@ -1,18 +1,29 @@
 import React, { useState, useEffect } from "react";
 import CommonUI from "./commonUI";
+import Add from "components/Add";
+import Grid from "components/Grid";
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 
 //the verifyRole function will prevent null from being returned
 //ts is just in my way so I must say null could happen 
-/*function getRole():string | null{
-    let role:string | null = ' ';
-    while(!verifyRole(role)){
+function getRole():string | null{
+    let role:string | null = null;
+    let validRole:boolean = false;
+    while(!validRole){
         role = prompt('Are you a doctor or patient?');
+        if(verifyRole(role)){
+           validRole = true;
+           role = role.toLowerCase();
+           break;
+        } else {
+            console.log('input is not valid: ',role);
+            
+        } 
     }
     return role;  
 }
 function verifyRole(role: string | null):boolean{
-    if (role == null){
+    if (role === null){
         return false;
     }
     role = role.toLowerCase();
@@ -21,7 +32,7 @@ function verifyRole(role: string | null):boolean{
         return false;
     }
     return true;
-}*/
+}
 export const getServerSideProps = withPageAuthRequired({
     async getServerSideProps(ctx){
         return {
@@ -34,8 +45,7 @@ export const getServerSideProps = withPageAuthRequired({
 const DoctorView = () => {
   return (
     <CommonUI>
-      <h1>Welcome, Admin!</h1>
-      <p>You have access to all features.</p>
+      <h1>Welcome, Doc!</h1>
     </CommonUI>
   );
 };
@@ -44,7 +54,8 @@ const PatientView = () => {
   return (
     <CommonUI>
       <h1>Welcome, User!</h1>
-      <p>You have limited access to features.</p>
+      <Add />
+      <Grid />
     </CommonUI>
   );
 };
@@ -56,7 +67,7 @@ export default  function Dashboard({user,props}:any) {
 
   useEffect(() => {
     // Fetch the user's sub role
-    const fetchUser = async () => {
+    const fetchUser = async () => { 
         const response = await fetch("/api/db/user",{
         method: "POST",
         body: JSON.stringify({
@@ -69,24 +80,40 @@ export default  function Dashboard({user,props}:any) {
         const response = await fetch("/api/db/checkUserRole",{
             method: "POST",
             body: JSON.stringify({
-                user: user
+                user : user
                 })
             });
             let roleResult = await response.json();
+            console.log(roleResult);
+            
             //no role was found for the user 
             if(roleResult.length === 0){
-                //let roleInput = getRole();
-                //verifyRole(roleInput);
-                console.log('Use has not been assigned a role yet');
-                
+                let roleInput = getRole();
+                console.log('Your role is ' + roleInput);
+                setRole(roleInput);
+                await fetch("/api/db/addRole",{
+                    method: "POST",
+                    body: JSON.stringify({
+                        role : roleInput,
+                        userSub: user.sub
+                    })
+                });
+            } else {
+                setRole(roleResult[0].role);
+                console.log('Role', role);
             }
-            console.log(roleResult)
     }
     fetchUser();
     fetchRole();
   }, []);
   //console.log(user);
   //return <div>{role === "admin" ? <DoctorView /> : <PatientView />}</div>;
-  return <div>hi</div> 
+  if(role == "doctor"){
+    return <DoctorView/>
+} else if(role  == "patient"){
+    return <PatientView/>
+  } else {
+    return <div>Determining Role</div>
+  }
 };
 
