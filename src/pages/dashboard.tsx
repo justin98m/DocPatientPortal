@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import CommonUI from "./commonUI";
 import Add from "components/Add";
 import Grid from "components/Grid";
+import DocGrid from '../../components/DocGrid';
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 
 //the verifyRole function will prevent null from being returned
@@ -42,19 +43,20 @@ export const getServerSideProps = withPageAuthRequired({
         }
     }
 });
-const DoctorView = () => {
+const DoctorView = (props:any) => {
   return (
     <CommonUI>
-      <h1>Welcome, Doc!</h1>
+      Doc
+      <DocGrid />
     </CommonUI>
   );
 };
 
-const PatientView = () => {
+const PatientView = (props:any) => {
   return (
     <CommonUI>
       <h1>Welcome, User!</h1>
-      <Add />
+      <Add userSub={props.userSub}/>
       <Grid />
     </CommonUI>
   );
@@ -109,9 +111,9 @@ export default  function Dashboard({user,props}:any) {
   //console.log(user);
   //return <div>{role === "admin" ? <DoctorView /> : <PatientView />}</div>;
   if(role == "doctor"){
-    return <DoctorView/>
+    return <DoctorView userSub={user.sub}/>
 } else if(role  == "patient"){
-    return <PatientView/>
+    return <PatientView userSub={user.sub}/>
   } else {
     return <div>Determining Role</div>
   }
