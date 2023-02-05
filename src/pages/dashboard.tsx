@@ -13,7 +13,9 @@ function getRole():string | null{
         role = prompt('Are you a doctor or patient?');
         if(verifyRole(role)){
            validRole = true;
-           role = role.toLowerCase();
+           if(role != null){
+            role = role.toLowerCase();
+           }
            break;
         } else {
             console.log('input is not valid: ',role);
@@ -63,7 +65,7 @@ const PatientView = () => {
 
 export default  function Dashboard({user,props}:any) {
   //status to see if user role is stored in db
-    const [role, setRole] = useState("");
+    const [role, setRole] = useState<string | null>("");
 
   useEffect(() => {
     // Fetch the user's sub role
