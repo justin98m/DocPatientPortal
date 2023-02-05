@@ -48,7 +48,7 @@ const Add = (props: Props) => {
                   </button>
                 </div>
                 {/*body*/}
-                <Form />
+                <Form userSub={props.userSub} />
               </div>
             </div>
           </div>
