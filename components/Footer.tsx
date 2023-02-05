@@ -28,7 +28,7 @@ const Footer = (props: Props) => {
         </a>
 
         <a
-          href="/patientdashboard"
+          href="/dashboard"
           className="mx-4 text-gray-100 transition-colors duration-300 hover:underline"
           aria-label="log"
         >
