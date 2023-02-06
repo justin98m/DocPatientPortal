@@ -18,7 +18,19 @@ function DocGrid({userSub}:any) {
      fetchPatients();
   })
     if(patients.length == 0){
-      return <h1><br></br><br></br><strong>You Have No Patients Yet</strong></h1>
+      return ( 
+      <>
+      <h1><br></br><br></br><strong>You Have No Patients Yet</strong></h1>
+      <br></br><br></br><br></br>
+      <br></br><br></br><br></br>
+      <br></br><br></br><br></br>
+      <br></br><br></br><br></br>
+      <br></br><br></br>
+      <br></br><br></br><br></br>
+      <br></br>
+      <br></br>
+      </>
+      )
     } else 
     return(
     <div className="sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-5 lg:px-5 lg:py-5">
