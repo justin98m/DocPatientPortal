@@ -1,17 +1,20 @@
 import React, { Component } from "react";
-import { dateConversion } from "../src/lib/dateConversion";
+import { dateConversion, HTMLToday } from "../src/lib/dateConversion";
+
+
 class Form extends Component {
   constructor(props) {
     super(props);
-
+    //non empty strings are default values for select tags
     this.state = {
       medname: "",
       dosage: "",
-      measurement: "",
+      measurement: "microgram",
       frequency: "",
-      intake: "",
+      intake: "tablet",
       time: "",
       date: "",
+      userSub: this.props.userSub,
     };
   }
 
@@ -23,7 +26,8 @@ class Form extends Component {
       frequency: this.state.frequency,
       intake: this.state.intake,
       time: this.state.time,
-      date: this.state.date,
+      date: dateConversion(this.state.date, this.state.time),
+      userSub: this.userSub
     };
   }
 
@@ -49,13 +53,22 @@ class Form extends Component {
     this.setState({ date: event.target.value });
   };
 
-  handleSubmit = (event) => {
+  handleSubmit = async(event) => {
     event.preventDefault();
-
-    dateConversion(this.state.date, this.state.time);
+    console.log(this.userSub);
+    let result = await fetch("/api/db/addDrug",{
+      method: "POST",
+      body: JSON.stringify({
+        drug : this.getFormData(),
+        userSub : this.userSub
+      })
+    })
+   
+    console.log(result);
   };
 
   render() {
+    console.log("user Sub ", this.userSub);
     return (
       <form onSubmit={this.handleSubmit} className="flex flex-col p-5">
         <div className="pb-6 flex flex-col">
@@ -65,6 +78,7 @@ class Form extends Component {
             value={this.state.medname}
             onChange={this.handleMednameChange}
             className="border-b-2"
+            required
           />
         </div>
         <div className="pb-6 flex flex-col">
@@ -74,10 +88,14 @@ class Form extends Component {
             value={this.state.dosage}
             onChange={this.handleDosageChange}
             className="border-b-2"
+            required
+
           ></input>
           <select
             value={this.state.measurement}
             onChange={this.handleMeasurementChange}
+            required
+
           >
             <option value="microgram">Microgram</option>
             <option value="milligram">Milligram</option>
@@ -92,6 +110,7 @@ class Form extends Component {
           <label>Frequency (every x days)</label>
 
           <input
+            required
             type="number"
             value={this.state.frequency}
             min="1"
@@ -101,7 +120,7 @@ class Form extends Component {
         </div>
         <div className="pb-6 flex flex-col">
           <label>Intake Type</label>
-          <select value={this.state.intake} onChange={this.handleIntakeChange}>
+          <select value={this.state.intake} onChange={this.handleIntakeChange} required>
             <option value="tablet">Tablet</option>
             <option value="syrup">Syrup</option>
             <option value="spray">Spray</option>
@@ -119,6 +138,7 @@ class Form extends Component {
         <div className="pb-6 flex flex-col">
           <label>Time</label>
           <input
+            required
             type="time"
             value={this.state.time}
             onChange={this.handleTimeChange}
@@ -127,7 +147,9 @@ class Form extends Component {
         <div className="pb-6 flex flex-col">
           <label>Start Date</label>
           <input
+            required
             type="date"
+            min={HTMLToday()}
             value={this.state.date}
             onChange={this.handleDateChange}
           />
