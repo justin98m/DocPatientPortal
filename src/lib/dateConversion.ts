@@ -12,6 +12,19 @@ function dateToUTCNumber(date: Date): number {
 function UTCNumberToDate(utc: string): Date {
   return new Date(Number(utc));
 }
+function HTMLToday(){
+  let today = new Date(Date.now());
+  let year = today.getFullYear();
+  //Html months start at 1 whil js months start at 0
+  let month:string|number = Number(today.getMonth())+1;
+  let day:string|number = today.getDate();
+  //Html dates require leading zeros for single digit numbers
+  month = month < 10 ? '0'+ String(month) : month;
+  day = day < 10 ? '0'+ String(day) : day;
+  let htmlDateString = `${year}-${month}-${day}`;
+  
+  return htmlDateString;
+}
 
 function dateConversion(date: any, time: any) {
   let year = Number(date.slice(0, 4));
@@ -35,4 +48,4 @@ function dateConversion(date: any, time: any) {
   return String(utc);
 }
 
-export { dateToUTCNumber, UTCNumberToDate, dateConversion };
+export { dateToUTCNumber, UTCNumberToDate, dateConversion, HTMLToday };

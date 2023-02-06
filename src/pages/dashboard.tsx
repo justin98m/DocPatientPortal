@@ -54,11 +54,11 @@ const DoctorView = ({userSub}:any) => {
   );
 };
 
-const PatientView = () => {
+const PatientView = ({userSub}:any) => {
   return (
     <CommonUI>
       <h1>Welcome, User!</h1>
-      <Add />
+      <Add userSub={userSub}/>
       <Grid />
     </CommonUI>
   );
@@ -99,7 +99,7 @@ export default  function Dashboard({user,props}:any) {
                     method: "POST",
                     body: JSON.stringify({
                         role : roleInput,
-                        user: user
+                        userSub: user.sub
                     })
                 });
             } else {
@@ -115,7 +115,7 @@ export default  function Dashboard({user,props}:any) {
   if(role == "doctor"){  
     return <DoctorView userSub={user.sub}/> 
   }else if(role  == "patient"){
-    return <PatientView/>
+    return <PatientView userSub={user.sub}/>
   } else {
     return <div>Determining Role</div>
   }

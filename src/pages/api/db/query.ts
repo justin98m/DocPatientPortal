@@ -11,6 +11,7 @@ export async function sendSQL(sql:string) {
 
 export async function dbQuery(sql:string,con:any){
     const [rows] = await con.execute(sql)
+    
     return rows;
 }
 

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Form from "./Form";
 
-type Props = {};
 
-const Add = (props: Props) => {
+
+const Add = ({userSub}:any) => {
   const [showModal, setShowModal] = useState(false);
   return (
     <div className="flex flex-col justify-evenly items-center md:flex-row py-5">
@@ -48,7 +48,7 @@ const Add = (props: Props) => {
                   </button>
                 </div>
                 {/*body*/}
-                <Form />
+                <Form userSub={userSub} />
               </div>
             </div>
           </div>
