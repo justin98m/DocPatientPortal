@@ -48,7 +48,6 @@ export const getServerSideProps = withPageAuthRequired({
 const DoctorView = ({userSub}:any) => {
   return (
     <CommonUI>
-      <h1>Welcome, Doc!</h1>
       <DocGrid userSub ={userSub} />
     </CommonUI>
   );
@@ -57,7 +56,6 @@ const DoctorView = ({userSub}:any) => {
 const PatientView = ({userSub}:any) => {
   return (
     <CommonUI>
-      <h1>Welcome, User!</h1>
       <Add userSub={userSub}/>
       <Grid />
     </CommonUI>
